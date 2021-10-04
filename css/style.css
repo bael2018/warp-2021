@@ -493,12 +493,44 @@ header{
     padding: 13px;
 }
 
+.about_middle_lower:hover div,
+.about_middle_lower:hover div::after,
+.about_middle_lower:hover div::before{
+    background: white;
+}
+
 .about_middle_lower div{
     width: 40px;
+    height: 1px;
+    background: #797979;
     transition: .3s;
-    height: 10px;
-    background: url('/img/arrowed.png') center / cover;
+    position: relative;
 }
+
+.about_middle_lower div::before{
+    content: '';
+    height: 1px;
+    transform: rotate(40deg);
+    width: 10px;
+    top: -4px;
+    transition: .3s;
+    background: #797979;
+    right: 0;
+    position: absolute;
+}
+
+.about_middle_lower div::after{
+    content: '';
+    height: 1px;
+    transition: .3s;
+    transform: rotate(-40deg);
+    width: 10px;
+    bottom: -4px;
+    background: #797979;
+    right: 0;
+    position: absolute;
+}
+
 
 .about_middle_lower:hover{
     background: #F0153D;
