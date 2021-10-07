@@ -812,7 +812,7 @@ footer{
     }
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 550px){
 
     .reports_wrapper_child{
         width: 100%;
