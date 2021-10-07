@@ -4,7 +4,6 @@
 body{
     margin: 0px;
     font-family: 'Manrope', sans-serif;
-    overflow-x: hidden !important;
 }
 
 /* header */
@@ -78,6 +77,7 @@ header{
 
 .header_container_upper_inner a:active{
     border: 1px solid #A8A8A8;
+    transition: none;
 }
 
 .header_container_upper_inner a img{
@@ -159,7 +159,19 @@ header{
     width: 95%;
     margin: 0 auto;
     margin-top: 50px;
-    overflow-x: hidden !important;
+    overflow-x: hidden;
+    padding-bottom: 40px;
+}
+
+.swiper_slide_second,
+.swiper_slide_first{
+    display: none !important;
+}
+
+.main_content{
+    max-width: 1350px;
+    width: 95%;
+    margin: 0 auto;
 }
 
 /* body */
@@ -167,6 +179,7 @@ header{
 .swiper {
     width: 100%;
     height: 100%;
+    overflow: inherit !important;
 }
 
 .swiper-slide {
@@ -209,7 +222,8 @@ header{
 }
 
 .reports_wrapper{
-    width: 100%;
+    width: 97%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
 }
@@ -223,7 +237,6 @@ header{
     transition: .2s;
     padding: 30px 20px;
     text-align: center;
-    margin-right: 50px;
 }
 
 .reports_wrapper_child:hover{
@@ -232,6 +245,7 @@ header{
 
 .reports_wrapper_child:active{
     background:rgba(195, 0, 36, 1);
+    transition: none;
 }
 
 .reports_wrapper_child img{
@@ -332,10 +346,12 @@ header{
 
 .swiper-button-prev:active{
     background: rgba(226, 226, 226, 1);
+    transition: none;
 }
 
 .swiper-button-next:active{
     background: rgba(226, 226, 226, 1);
+    transition: none;
 }
 
 .swiper-button-prev::after{
@@ -350,10 +366,6 @@ header{
 
 .swiper-scrollbar-drag {
     background:rgba(240, 21, 61, 1) !important;
-}
-
-.swiper{
-    overflow: inherit !important;
 }
 
 /* about */
@@ -378,7 +390,7 @@ header{
 /* about_left */
 
 .about_left{
-    width: 20%;
+    width: 22%;
 }
 
 .about_left_inner{
@@ -386,7 +398,7 @@ header{
     position: relative;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: flex-start;
     padding: 6px 20px;
     box-sizing: border-box;
@@ -407,11 +419,17 @@ header{
 .about_left_inner h4{
     margin: 0px;
     font-weight: 300;
+    display: flex;
+    justify-content: flex-end;
     font-size: 48px;
+    box-sizing: border-box;
 }
 
 .about_left_inner p{
     font-size: 18px;
+    text-align: left;
+    width: 65%;
+    box-sizing: border-box;
     margin: 0px;
     margin-top: 9px;
     margin-left: 3px;
@@ -453,25 +471,40 @@ header{
     height: 160px;
     position: relative;
     transition: .3s;
-    background: white;
+    background: url('/img/hover.png') center / cover;
     box-sizing: border-box;
 }
 
-.about_middle_upper_child:hover{
-    background: url('/img/hover.png') center / cover;
+.about_middle_upper_child::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    background: white;
+    transition: .3s;
 }
 
-.about_middle_upper_child:active{
+.about_middle_upper_child:hover::before{
+    opacity: 0;
+}
+
+.about_middle_upper_child:active{ 
+    transition: none;
     background: url('/img/click.png') center / cover;
 }
 
 .about_middle_upper_child span{
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .about_middle_upper_child span img{
     margin-right: 7px;
+    position: relative;
 }
 
 .about_arrow{
@@ -660,7 +693,6 @@ header{
     background:rgba(195, 0, 36, 1);
 }
 
-
 .about_right_inside_footer a:hover .about_what{
     background: url('/img/whiteWhat.png') center / cover;
 }
@@ -698,6 +730,18 @@ footer{
 
 
 @media screen and (max-width: 1100px){
+
+    .swiper_slide_first{
+        display: block !important;
+    }
+    
+    .reports_wrapper_child_unshow{
+        display: none;
+    }
+
+    .reports_wrapper_child{
+        width: 47%;
+    }
 
     .about_title{
         width: 100%;
@@ -753,6 +797,10 @@ footer{
 
 @media screen and (max-width: 600px){
 
+    .reports_wrapper_child{
+        width: 48%;
+    }
+
     .header_container_lower_link{
         display: none;
     }
@@ -761,6 +809,21 @@ footer{
         width: 100%;
         height: 120px;
         margin-bottom: 25px;
+    }
+}
+
+@media screen and (max-width: 500px){
+
+    .reports_wrapper_child{
+        width: 100%;
+    }
+
+    .reports_wrapper_child_alt{
+        display: none;
+    }
+
+    .swiper_slide_second{
+        display: block !important;
     }
 }
 
