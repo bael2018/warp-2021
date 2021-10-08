@@ -764,6 +764,26 @@ footer{
 /* Adaptation */
 
 
+@media screen and (max-width: 1360px){
+
+    .about_middle{
+        width: 42%;
+    }
+}
+
+@media screen and (max-width: 1290px){
+    
+    .about_middle{
+        width: 45%;
+    }
+}
+@media screen and (max-width: 1150px){
+    
+    .about_middle{
+        width: 48%;
+    }
+}
+
 @media screen and (max-width: 1100px){
 
     .swiper_slide_first{
